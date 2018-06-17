@@ -12,7 +12,7 @@ export class TabsPage {
 
   tab1Root = HomePage;
   tab2Root = UserCardPage;
-  tab3Root = SettingPage;
+  // tab3Root = SettingPage;
 
   constructor() {
 

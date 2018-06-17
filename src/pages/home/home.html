@@ -6,13 +6,93 @@
 -->
 <ion-header no-border>
 
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="white">
+    <ion-title>TV猫</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <div class="heading">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/imgs/default_avatar.png" />
+      </ion-avatar>
+      <h2 class="name">张德勇<span class="level">一级代理</span></h2>
+      <p class="info">
+        <span>账号: zdy</span><br>
+        <span>ID: 23393838</span>
+      </p>
+      <ion-note item-right>
+        <button ion-button small>发展代理</button>
+        <p>下级分销商: 300</p>
+      </ion-note>
+    </ion-item>
+    <ion-row>
+      <ion-col col-3>
+        <div class="stat-box">
+          <h2>¥ 0.00</h2>
+          <p>总收入</p>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+          <div class="stat-box">
+            <h2>¥ 0.00</h2>
+            <p>今日收入</p>
+          </div>
+        </ion-col>
+        <ion-col col-3>
+            <div class="stat-box">
+              <h2>32</h2>
+              <p>总订单</p>
+            </div>
+          </ion-col>
+          <ion-col col-3>
+              <div class="stat-box">
+                <h2>0</h2>
+                <p>今日订单</p>
+              </div>
+            </ion-col>
+    </ion-row>
+  </div>
+  <div class="box">
+    <h2 class="title">TV猫下载方式<span class="ios-install">苹果安装教程</span></h2>
+    <div class="qrcode">
+        <img src="assets/imgs/qrcode.jpg" />
+        <p>识别二维码下载</p>
+      </div>
+  </div>
+  <div class="box">
+    <h2 class="title">最新订单</h2>
+    <div class="order">
+      <ion-row>
+        <ion-col col-7>
+          <p>1个月VIP</p>
+          <p>分销商: 张德勇</p>
+          <p>2018-09-09 12:30</p>
+        </ion-col>
+        <ion-col col-5 style="text-align:right;">
+          <p>2元/个</p>
+          <p>× 9</p>
+          <p>1级佣金：4.5元</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="order">
+        <ion-row>
+          <ion-col col-7>
+            <p class="name">1个月VIP</p>
+            <p class="">分销商: 张德勇</p>
+            <p>2018-09-09 12:30</p>
+          </ion-col>
+          <ion-col col-5 style="text-align:right;">
+            <p>2元/个</p>
+            <p>× 9</p>
+            <p>1级佣金：4.5元</p>
+          </ion-col>
+        </ion-row>
+      </div>
 
+  </div>
 </ion-content>

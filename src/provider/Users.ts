@@ -18,10 +18,14 @@ export class Users {
         return new Promise((resolve) => {
             this.storage.get('token').then( val => {
                 // resolve('aed672e8bbe94206995a78dc6cd6ed1b'); // 后台wmarshx用户的Token aed672e8bbe94206995a78dc6cd6ed1b
-                // resolve('999ea21a1ce04e0497c4f0f69d2ed5d9'); // 本地测试
-                resolve(val)
+                resolve('999ea21a1ce04e0497c4f0f69d2ed5d9'); // 本地测试
+                // resolve(val)
             } );
         });
+    }
+
+    login(agent) {
+        // return this.api.POST('')
     }
 
     /**
