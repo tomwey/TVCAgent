@@ -16,16 +16,32 @@ export class Users {
      */
     token(): Promise<any> {
         return new Promise((resolve) => {
-            this.storage.get('token').then( val => {
+            this.storage.get('agent.token').then( val => {
+                console.log(val);
                 // resolve('aed672e8bbe94206995a78dc6cd6ed1b'); // 后台wmarshx用户的Token aed672e8bbe94206995a78dc6cd6ed1b
-                resolve('999ea21a1ce04e0497c4f0f69d2ed5d9'); // 本地测试
-                // resolve(val)
+                // resolve('999ea21a1ce04e0497c4f0f69d2ed5d9'); // 本地测试
+                resolve(val)
             } );
         });
     }
 
     login(agent) {
-        // return this.api.POST('')
+        return new Promise((resolve, reject) => {
+            this.api.POST('agent/login', agent, '登录中...')
+                .then(res => {
+                    if (res && res['data']) {
+                        let token = res['data']['token'];
+                        this.storage.set('agent.token', token)
+                            .then(() => {
+                                resolve(true);
+                            });
+                    } else {
+                        reject('不正确的结果');
+                    }
+                })
+                .catch(error => reject(error));
+        });
+        
     }
 
     /**
