@@ -6,13 +6,51 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>UserCard</ion-title>
+  <ion-navbar color="white">
+    <ion-segment [(ngModel)]="state" (ionChange)="segmentChanged($event)" >
+      <ion-segment-button value="pending">
+        待发出
+      </ion-segment-button>
+      <ion-segment-button value="sent">
+        已发出
+      </ion-segment-button>
+    </ion-segment>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <div class="empty-error-box" *ngIf="!!error">
+    {{error}}
+  </div>
 
+  <div class="cards">
+    <ion-card *ngFor="let card of cards">
+      <img [src]="card.card_ad.cover"/>
+      <ion-item>
+        <h2 item-left class="vip-plan">{{card.vip_plan.name}}</h2>
+        <ion-note item-right>{{card.vip_plan.price == 0 ? '免费' : '¥' + card.vip_plan.price}}</ion-note>
+      </ion-item>
+      <ion-item *ngIf="!card.user">
+        <ion-label>用户ID</ion-label>
+        <ion-input [(ngModel)]="card.user_id" placeholder="输入用户ID"></ion-input>
+        <ion-note item-right>
+          <button ion-button small (click)="sendCard(card);" [disabled]="!card.user_id">发卡</button>
+        </ion-note>
+        
+      </ion-item>
+      <ion-item *ngIf="card.user">
+        <h2>领卡用户: {{card.user.nickname}}</h2>
+        <ion-note item-right>UID: {{card.user.id}}</ion-note>
+      </ion-item>
+    </ion-card>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)" [enabled]="hasMore">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="正在加载...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
