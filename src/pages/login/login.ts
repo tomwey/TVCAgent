@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { /*IonicPage,*/ NavController, NavParams, Content, App } from 'ionic-angular';
-import { ApiService } from '../../provider/api-service';
-import { DomSanitizer } from '@angular/platform-browser';
+// import { ApiService } from '../../provider/api-service';
+// import { DomSanitizer } from '@angular/platform-browser';
 import { Users } from '../../provider/Users';
 import { Tools } from '../../provider/Tools';
 import { iOSFixedScrollFreeze } from '../../provider/iOSFixedScrollFreeze';
@@ -30,8 +30,8 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    private api: ApiService,
-    private san: DomSanitizer,
+    // private api: ApiService,
+    // private san: DomSanitizer,
     private users: Users,
     private iosFixed: iOSFixedScrollFreeze,
     private tools: Tools,

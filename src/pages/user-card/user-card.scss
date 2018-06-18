@@ -4,12 +4,7 @@ page-user-card {
     }
 
     .cards {
-        ion-note {
-            font-size: 14px;
-            color: #333;
-        }
-
-        .vip-plan {
+        ion-note, h2 {
             font-size: 14px;
             color: #333;
         }
