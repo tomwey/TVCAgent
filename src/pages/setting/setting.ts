@@ -3,6 +3,7 @@ import { /*IonicPage,*/ NavController, NavParams, App, AlertController, Events, 
 import { Users } from '../../provider/Users';
 import { LoginPage } from '../../pages/login/login';
 import { iOSFixedScrollFreeze } from '../../provider/iOSFixedScrollFreeze';
+import { Tools } from '../../provider/Tools';
 
 /**
  * Generated class for the SettingPage page.
@@ -18,7 +19,7 @@ import { iOSFixedScrollFreeze } from '../../provider/iOSFixedScrollFreeze';
 })
 export class SettingPage {
 
-  user: any = null;
+  agent: any = null;
   error: any = null;
 
   @ViewChild(Content) content: Content;
@@ -26,9 +27,10 @@ export class SettingPage {
   constructor(public navCtrl: NavController, 
     private users: Users,
     private app: App,
-    private events: Events,
+    private tools: Tools,
+    // private events: Events,
     private iosFixed: iOSFixedScrollFreeze,
-    private modalCtrl: ModalController,
+    // private modalCtrl: ModalController,
     private alertCtrl: AlertController,
     public navParams: NavParams) {
   }
@@ -37,10 +39,6 @@ export class SettingPage {
 
     this.iosFixed.fixedScrollFreeze(this.content);
 
-    this.events.subscribe('user:reload', () => {
-      this.loadUserData();
-    });
-    // console.log('ionViewDidLoad SettingPage');
     this.loadUserData();
   }
 
@@ -77,33 +75,12 @@ export class SettingPage {
   loadUserData() {
     this.users.GetUserProfile()
       .then(res => {
-        this.user = res['data'];
+        this.agent = res['data'];
       })
       .catch(error => {
         this.error = error;
+        this.tools.showToast(error.message || error);
       });
-  }
-
-  gotoProfile() {
-    this.app.getRootNavs()[0].push('UserProfilePage', this.user);
-  }
-
-  charge() {
-    let modal = this.modalCtrl.create('ChargePage');
-    modal.onDidDismiss((data) => {
-      if (data) {
-        this.loadUserData();
-      };
-    })
-    modal.present();
-  }
-
-  gotoWallet() {
-    this.app.getRootNavs()[0].push('WalletPage');
-  }
-
-  gotoPayMoney() {
-    this.app.getRootNavs()[0].push('RedpackConsumePage');
   }
 
   newVIP() {

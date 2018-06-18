@@ -63,7 +63,7 @@ export class Users {
     GetUserProfile() {
         return new Promise((resolve, reject) => {
             this.token().then(token => {
-                this.api.GET('user/me', { token: token })
+                this.api.GET('agent/me', { token: token })
                     .then(res => {
                         resolve(res);
                     })

@@ -1,9 +1,39 @@
 page-home {
-    .heading {
-        background: white;
 
+    .stats-head {
+        padding: 20px;
+        background: color($colors, primary);
+    }
+    .heading {
+        background: color($colors, primary);
+        padding-bottom: 10px;
         ion-note {
             text-align: right;
+        }
+
+        .today-earn {
+            color: white;
+            text-align: center;
+            h2, p {
+                margin: 0;
+                padding: 0;
+            }
+
+            h2 {
+                font-size: 28px;
+                font-weight: normal;
+                font-family: 'PingFang SC';
+            }
+
+            .rmb-symbol {
+                font-size: 14px;
+                padding-right: 3px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
         }
 
         .name {
@@ -27,6 +57,7 @@ page-home {
 
         .stat-box {
             padding: 10px;
+            // color: white;
             h2, p {
                 margin: 0;
                 padding: 0;
@@ -36,11 +67,11 @@ page-home {
                 font-size: 18px;
                 font-weight: normal;
                 font-family: 'PingFang SC';
-                color: #333;
+                color:white;
             }
             p {
                 font-size: 12px;
-                color: #666;
+                color: white;
             }
         }
     }
