@@ -38,16 +38,20 @@ $font-path: '../assets/fonts';
 .ion-ios-icon-send-card:before {
   content: "\e900";
   color: #4990E2;
+  font-size: 20px;
 }
 .ion-ios-icon-multi-users:before {
   content: "\e901";
   color: #8B572A;
+  font-size: 22px;
 }
 .ion-ios-icon-order:before {
   content: "\e902";
+  font-size: 20px;
   color: rgb(111, 197, 184);
 }
 .ion-ios-icon-earn:before {
   content: "\e903";
   color: #E75A16;
+  font-size: 20px;
 }

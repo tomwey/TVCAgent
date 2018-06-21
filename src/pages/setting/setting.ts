@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { /*IonicPage,*/ NavController, NavParams, App, AlertController, Events, ModalController, Content } from 'ionic-angular';
+import { /*IonicPage,*/ NavController, NavParams, App, AlertController, Content } from 'ionic-angular';
 import { Users } from '../../provider/Users';
 import { LoginPage } from '../../pages/login/login';
 import { iOSFixedScrollFreeze } from '../../provider/iOSFixedScrollFreeze';
