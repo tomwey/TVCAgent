@@ -14,34 +14,34 @@
 
 
 <ion-content>
-  <div class="heading" *ngIf="homeData.agent">
+  <div class="heading" *ngIf="agent">
     <ion-item>
       <ion-avatar item-left>
         <img src="assets/imgs/default_avatar.png" />
       </ion-avatar>
-      <h2 class="name">{{homeData.agent.name}}</h2>
-      <p><span class="level">{{homeData.agent.level_name}}</span></p>
+      <h2 class="name">{{agent.name}}</h2>
+      <p><span class="level">{{agent.level_name}}</span></p>
       <ion-note item-right>
-        <button ion-button small>退出登录</button>
+        <button ion-button small (click)="logout();">退出登录</button>
       </ion-note>
     </ion-item>
     
     <ion-row>
       <ion-col col-4>
         <div class="stat-box">
-          <h2>¥ {{homeData.agent.today_earn}}</h2>
+          <h2>¥ {{agent.today_earn}}</h2>
           <p>今日收入</p>
         </div>
       </ion-col>
       <ion-col col-4>
           <div class="stat-box">
-            <h2>{{homeData.agent.earn}}</h2>
+            <h2>{{agent.earn}}</h2>
             <p>总收入</p>
           </div>
         </ion-col>
         <ion-col col-4>
           <div class="stat-box">
-            <h2>{{homeData.agent.total_orders}}</h2>
+            <h2>{{agent.total_user_cards}}</h2>
             <p>已卖出会员</p>
           </div>
         </ion-col>
@@ -61,14 +61,14 @@
         <ion-icon name="icon-earn" item-left></ion-icon>
         佣金收入
         <ion-note item-right>
-          ¥ 500
+          ¥ {{agent && agent.earn}}
         </ion-note>
       </button>
       <button ion-item>
         <ion-icon name="icon-multi-users" item-left></ion-icon>
         下级分销商
         <ion-note item-right>
-          120
+            {{agent && (agent.child_count || 0)}}
         </ion-note>
       </button>
 
@@ -76,7 +76,7 @@
         <ion-icon name="icon-order" item-left></ion-icon>
         会员卡订单
         <ion-note item-right>
-          120
+          {{agent && agent.total_orders}}
         </ion-note>
       </button>
 

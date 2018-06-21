@@ -77,7 +77,7 @@ export class Users {
     }
 
     logout(): Promise<any> {
-        return this.storage.remove('token');
+        return this.storage.remove('agent.token');
     }
 
     GetTrades(pageNo: number, pageSize: number = 20) {

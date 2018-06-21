@@ -5,7 +5,8 @@ import { /*IonicPage,*/ NavController, NavParams, Content, App } from 'ionic-ang
 import { Users } from '../../provider/Users';
 import { Tools } from '../../provider/Tools';
 import { iOSFixedScrollFreeze } from '../../provider/iOSFixedScrollFreeze';
-import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
+// import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the LoginPage page.
@@ -50,7 +51,7 @@ export class LoginPage {
     this.users.login(this.agent)
       .then(() => {
         this.tools.showToast('登录成功');
-        this.app.getRootNavs()[0].setRoot(TabsPage);
+        this.app.getRootNavs()[0].setRoot(HomePage);
       })
       .catch(error => {
         this.tools.showToast(error.message || '登录失败');

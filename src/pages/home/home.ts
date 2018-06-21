@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { /*IonicPage, */NavController, NavParams } from 'ionic-angular';
+import { /*IonicPage, */NavController, NavParams, App, AlertController } from 'ionic-angular';
 import { ApiService } from '../../provider/api-service';
 import { Users } from '../../provider/Users';
 import { Tools } from '../../provider/Tools';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the HomePage page.
@@ -18,16 +19,14 @@ import { Tools } from '../../provider/Tools';
 })
 export class HomePage {
 
-  homeData: any = {
-    agent: null,
-    app_info: null,
-    orders: [],
-  };
+  agent: any = {};
 
   constructor(public navCtrl: NavController, 
     private api: ApiService,
     private users: Users,
     private tools: Tools,
+    private app: App,
+    private alertCtrl: AlertController,
     public navParams: NavParams) {
   }
 
@@ -36,11 +35,38 @@ export class HomePage {
     this.loadData();
   }
 
+  logout() {
+
+    this.alertCtrl.create({
+      title: '退出登录',
+      subTitle: '您确定吗？',
+      buttons: [
+        {
+          text: '取消',
+          role: 'cancel',
+
+        },
+        {
+          text: '确定',
+          handler: () => {
+            this.users.logout().then(() => {
+              setTimeout(() => {
+                this.app.getRootNavs()[0].setRoot(LoginPage);
+              }, 10);
+            });
+          }
+        }
+      ]
+    }).present();
+
+    
+  }
+
   loadData() {
     this.users.token().then(token => {
       this.api.GET('agent/home', { token: token }, '正在加载')
         .then(res => {
-          this.homeData = res['data'];
+          this.agent = res['data'];
         })
         .catch(error => {
           this.tools.showToast(error.message || error);
