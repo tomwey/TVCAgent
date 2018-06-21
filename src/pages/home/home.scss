@@ -1,62 +1,36 @@
 page-home {
 
-    .stats-head {
-        padding: 20px;
-        background: color($colors, primary);
-    }
     .heading {
-        background: color($colors, primary);
+        background: white;
         padding-bottom: 10px;
         ion-note {
             text-align: right;
         }
 
-        .today-earn {
-            color: white;
-            text-align: center;
-            h2, p {
-                margin: 0;
-                padding: 0;
-            }
-
-            h2 {
-                font-size: 28px;
-                font-weight: normal;
-                font-family: 'PingFang SC';
-            }
-
-            .rmb-symbol {
-                font-size: 14px;
-                padding-right: 3px;
-            }
-
-            p {
-                font-size: 16px;
-                margin-bottom: 10px;
-            }
-        }
-
         .name {
-            font-size: 14px;
-            color: #333;
             margin-bottom: 5px;
-            .level {
-                padding: 2px 3px;
-                border: 0.55px solid color($colors, primary);
-                font-size: 10px;
-                margin-left: 5px;
-                // margin-top: -2px;
-                color: color($colors, primary);
-                border-radius: 2px;
-            }
         }
-        .info {
-            font-size: 12px;
-            color: #666;
+
+        .level {
+            // padding: 3px;
+            border: 0.55px solid color($colors, primary);
+            font-size: 10px;
+            color: color($colors, primary);
+            display: block;
+            width: 52px;
+            text-align: center;
+            padding: 3px 0;
+            border-radius: 2px;
+        }
+
+        ion-row, ion-col {
+            text-align: center;
         }
 
         .stat-box {
+            margin-top: 10px;
             padding: 10px;
+            text-align: left;
             // color: white;
             h2, p {
                 margin: 0;
@@ -67,58 +41,28 @@ page-home {
                 font-size: 18px;
                 font-weight: normal;
                 font-family: 'PingFang SC';
-                color:white;
+                color:rgb(58,58,58);
             }
             p {
                 font-size: 12px;
-                color: white;
+                color: #999;
             }
         }
     }
 
-    .box {
-        background: white;
-        width: 100%;
-        margin-top: 8px;
-        padding: 0 15px;
-        .title {
-            font-size: 14px;
-            font-weight: normal;
-            margin: 0;
-            padding: 15px 0;
-            border-bottom: 0.55px solid #ccc;
+    .sections {
+        padding: 10px 0;    
+        .list-ios {
+            margin-bottom: 10px;
         }
-    }
 
-    .ios-install {
-        float: right;
-        color: #666;
-        font-size: 14px;
-    }
 
-    .qrcode {
-        text-align: center;
-        padding: 20px;
-        img {
-            max-width: 120px;
+        .item-block:first-child {
+            border-top: 0;
         }
-        p {
-            margin: 0;
-            padding: 0;
-            font-size: 14px;
-            color: #666;
-        }
-    }
 
-    .order {
-        padding: 10px 0;
-        border-bottom: 0.55px dashed #ccc;
-        p {
-            margin: 0;
-            padding: 0;
-            font-size: 14px;
-            color: #666;
-            margin-top: 5px;
+        .item-block:last-child {
+            border-bottom: 0;
         }
     }
 

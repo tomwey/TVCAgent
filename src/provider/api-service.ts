@@ -12,7 +12,7 @@ import { Tools } from './Tools';
   for more info on providers and Angular 2 DI.
 */
 // 正式服务器和账号
-const API_HOST: string = "http://tvcat.small-best.com/api/v1";
+const API_HOST: string = "http://m.tvcat.co/api/v1";//"http://tvcat.small-best.com/api/v1";
 const API_KEY:  string = "c6c8fd23676b4f039330e9107285ab59";
 
 // 测试账号和测试服务器

@@ -1,0 +1,53 @@
+$font-path: '../assets/fonts';
+
+@font-face {
+  font-family: 'customfont';
+  src:  url('#{$font-path}/customfont.eot?mls5s6');
+  src:  url('#{$font-path}/customfont.eot?mls5s6#iefix') format('embedded-opentype'),
+    url('#{$font-path}/customfont.ttf?mls5s6') format('truetype'),
+    url('#{$font-path}/customfont.woff?mls5s6') format('woff'),
+    url('#{$font-path}/customfont.svg?mls5s6#customfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.customfont {
+  font-family: 'customfont' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  //   /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  speak: none;
+}
+
+.ion-ios-icon-send-card:before,
+.ion-ios-icon-multi-users:before,
+.ion-ios-icon-order:before,
+.ion-ios-icon-earn:before
+
+{
+  @extend .customfont;
+}
+
+.ion-ios-icon-send-card:before {
+  content: "\e900";
+  color: #4990E2;
+}
+.ion-ios-icon-multi-users:before {
+  content: "\e901";
+  color: #8B572A;
+}
+.ion-ios-icon-order:before {
+  content: "\e902";
+  color: rgb(111, 197, 184);
+}
+.ion-ios-icon-earn:before {
+  content: "\e903";
+  color: #E75A16;
+}
