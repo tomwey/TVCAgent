@@ -62,6 +62,36 @@ export class HomePage {
     
   }
 
+  sendCards() {
+    this.navCtrl.push('SendCardsPage');
+  }
+
+  openEarn() {
+    this.navCtrl.push('EarningsPage');
+  }
+
+  openAgents() {
+    this.navCtrl.push('AgentsPage');
+  }
+
+  openOrders() {
+    this.navCtrl.push('OrderPage');
+  }
+
+  download() {
+    this.navCtrl.push('BrowserPage', {
+      slug: 'app_qrcode',
+      title: 'APP下载'
+    });
+  }
+
+  iosHelp() {
+    this.navCtrl.push('BrowserPage', {
+      slug: 'ios_help',
+      title: '苹果安装教程'
+    });
+  }
+
   loadData() {
     this.users.token().then(token => {
       this.api.GET('agent/home', { token: token }, '正在加载')

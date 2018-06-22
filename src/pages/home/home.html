@@ -50,21 +50,21 @@
 
   <div class="sections">
     <ion-list>
-      <button ion-item>
+      <button ion-item (click)="sendCards();">
         <ion-icon name="icon-send-card" item-left></ion-icon>
         发卡
         <ion-note item-right>
           支持多人发卡
         </ion-note>
       </button>
-      <button ion-item>
+      <button ion-item (click)="openEarn();">
         <ion-icon name="icon-earn" item-left></ion-icon>
         佣金收入
         <ion-note item-right>
           ¥ {{agent && agent.earn}}
         </ion-note>
       </button>
-      <button ion-item>
+      <button ion-item (click)="openAgents();">
         <ion-icon name="icon-multi-users" item-left></ion-icon>
         下级分销商
         <ion-note item-right>
@@ -72,7 +72,7 @@
         </ion-note>
       </button>
 
-      <button ion-item>
+      <button ion-item (click)="openOrders();">
         <ion-icon name="icon-order" item-left></ion-icon>
         会员卡订单
         <ion-note item-right>
@@ -82,11 +82,11 @@
 
     </ion-list>
     <ion-list>
-        <button ion-item>
+        <button ion-item (click)="download();">
           <ion-icon name="ios-download-outline" style="color: #F6A623;" item-left></ion-icon>
           APP下载
         </button>
-        <button ion-item>
+        <button ion-item (click)="iosHelp();">
           <ion-icon name="ios-help-circle-outline" style="color: #BD0FE1;font-size: 22px;" item-left></ion-icon>
           苹果安装教程
         </button>

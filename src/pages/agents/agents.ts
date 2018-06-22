@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the EarningsPage page.
+ * Generated class for the AgentsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-earnings',
-  templateUrl: 'earnings.html',
+  selector: 'page-agents',
+  templateUrl: 'agents.html',
 })
-export class EarningsPage {
+export class AgentsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EarningsPage');
+    console.log('ionViewDidLoad AgentsPage');
   }
 
 }
