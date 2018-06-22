@@ -7,12 +7,32 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Agents</ion-title>
+    <ion-title>分销商列表</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="newAgent();">
+        新建分销商
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <div class="empty-error-box" *ngIf="!!error">
+    {{error}}
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let agent of agents">
+      <div item-left class="left-section">
+        <p>姓名: {{agent.name}}</p>
+        <p>手机: {{agent.mobile}}</p>
+        <p>注册时间: {{agent.time}}</p>
+      </div>
+      <div item-right class="right-section">
+        <p>等级: {{agent.level_name}}</p>
+        <p>累计佣金: ¥{{agent.earn}}</p>
+        <p>下级分销商: {{agent.child_count}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>
