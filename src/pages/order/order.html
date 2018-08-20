@@ -7,12 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Order</ion-title>
+    <ion-title>会员订单列表</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <div class="empty-error-box" *ngIf="!!error">
+    {{error}}
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let order of orders">
+      <h2>{{order.vip_plan.name}}</h2>
+      <p>{{order.time}}</p>
+      <ion-note item-right class="stats">
+        <p>总量: <span class="total">{{order.quantity}}</span><br>
+          已卖: <span class="sent">{{order.sent_count}}</span></p>
+      </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>

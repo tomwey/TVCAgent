@@ -45,6 +45,7 @@ export class SendCardsPage {
     this.users.token().then(token => {
       this.api.GET('agent/orders', { token: token, type: 0 })
         .then(res => {
+          console.log(res);
           if (res && res['data']) {
             let orders = res['data'];
             this.orders = orders;
