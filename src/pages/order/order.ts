@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiService } from '../../provider/api-service';
-import { Tools } from '../../provider/Tools';
+// import { Tools } from '../../provider/Tools';
 import { Users } from '../../provider/Users';
 
 /**
@@ -24,7 +24,7 @@ export class OrderPage {
   constructor(public navCtrl: NavController, 
     private api: ApiService,
     private users: Users,
-    private tools: Tools,
+    // private tools: Tools,
     public navParams: NavParams) {
   }
 
