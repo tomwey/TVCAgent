@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Earnings</ion-title>
+    <ion-title>佣金明细</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <div class="empty-error-box" *ngIf="!!error">
+    {{error}}
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let earn of earns">
+      <h2>{{earn.product_name}}<span class="badge">{{earn.title}}</span></h2>
+      <p>销售人: {{earn.from_agent.name}}&emsp;{{earn.time}}</p>
+      <ion-note item-right style="color: rgb(204, 91, 91);">
+        {{earn.money}}元
+      </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
